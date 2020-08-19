@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeetCode1025. 除数博弈 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目：  解法一：dp，仔细想易知dp[i]的结果是由dp[1]到dp[i-1]的结果来决定的，即如果dp[i]为true，那么dp[j]（0&lt;j&lt;i）必然为false，并且i和j满足i%(i-j)&#x3D;&#x3D;0。 代码： 12345678910111213141516class Solution &amp;#123;public:    int dp[1005];    bool divisor">
+  <meta name="description" content="该题有两种解法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode1025. 除数博弈">
 <meta property="og:url" content="http://yoursite.com/2020/08/19/LeetCode1025-%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目：  解法一：dp，仔细想易知dp[i]的结果是由dp[1]到dp[i-1]的结果来决定的，即如果dp[i]为true，那么dp[j]（0&lt;j&lt;i）必然为false，并且i和j满足i%(i-j)&#x3D;&#x3D;0。 代码： 12345678910111213141516class Solution &amp;#123;public:    int dp[1005];    bool divisor">
+<meta property="og:description" content="该题有两种解法。">
 <meta property="og:locale">
 <meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819170951.png">
 <meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819171237.png">
 <meta property="article:published_time" content="2020-08-19T09:06:46.000Z">
-<meta property="article:modified_time" content="2020-08-19T09:13:13.981Z">
+<meta property="article:modified_time" content="2020-08-19T09:22:02.003Z">
 <meta property="article:author" content="ALANG">
 <meta property="article:tag" content="LeetCode题解">
 <meta property="article:tag" content="动态规划">
@@ -167,7 +167,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>该题有两种解法。</p>
+<a id="more"></a>
 
 <p><strong>题目：</strong></p>
 <p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819170951.png"></p>
@@ -180,8 +181,6 @@
 <p><strong>解法二：</strong><br>看的题解，直接上图</p>
 <p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819171237.png"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">divisorGame</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> N % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-
       
 
       
