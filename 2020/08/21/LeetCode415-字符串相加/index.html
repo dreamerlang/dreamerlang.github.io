@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode 1139. 最大的以 1 为边界的正方形 | ALANG</title>
+  <title>LeetCode415. 字符串相加 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给你一个由若干 0 和 1 组成的二维网格 grid，请你找出边界全部由 1 组成的最大 正方形 子网格，并返回该子网格中的元素数量。如果不存在，则返回 0。">
+  <meta name="description" content="给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 1139. 最大的以 1 为边界的正方形">
-<meta property="og:url" content="http://yoursite.com/2020/08/19/LeetCode-1139-%E6%9C%80%E5%A4%A7%E7%9A%84%E4%BB%A5-1-%E4%B8%BA%E8%BE%B9%E7%95%8C%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/index.html">
+<meta property="og:title" content="LeetCode415. 字符串相加">
+<meta property="og:url" content="http://yoursite.com/2020/08/21/LeetCode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="给你一个由若干 0 和 1 组成的二维网格 grid，请你找出边界全部由 1 组成的最大 正方形 子网格，并返回该子网格中的元素数量。如果不存在，则返回 0。">
+<meta property="og:description" content="给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-19T13:53:00.000Z">
-<meta property="article:modified_time" content="2020-08-19T14:09:58.834Z">
+<meta property="article:published_time" content="2020-08-21T02:17:50.000Z">
+<meta property="article:modified_time" content="2020-08-21T02:21:59.435Z">
 <meta property="article:author" content="ALANG">
-<meta property="article:tag" content="LeetCode题解">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
@@ -144,42 +144,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode-1139-最大的以-1-为边界的正方形" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode415-字符串相加" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 1139. 最大的以 1 为边界的正方形
+      LeetCode415. 字符串相加
     </h1>
   
 
         
-        <a href="/2020/08/19/LeetCode-1139-%E6%9C%80%E5%A4%A7%E7%9A%84%E4%BB%A5-1-%E4%B8%BA%E8%BE%B9%E7%95%8C%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="archive-article-date">
-  	<time datetime="2020-08-19T13:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+        <a href="/2020/08/21/LeetCode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/" class="archive-article-date">
+  	<time datetime="2020-08-21T02:17:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>给你一个由若干 <code>0</code> 和 <code>1</code> 组成的二维网格 <code>grid</code>，请你找出边界全部由 <code>1</code> 组成的最大 <strong>正方形</strong> 子网格，并返回该子网格中的元素数量。如果不存在，则返回 <code>0</code>。 </p>
+        <p> 给定两个字符串形式的非负整数 <code>num1</code> 和<code>num2</code> ，计算它们的和。 </p>
 <a id="more"></a>
 
-<p>示例 1：</p>
-<p>输入：grid = [[1,1,1],[1,0,1],[1,1,1]]<br>输出：9<br>示例 2：</p>
-<p>输入：grid = [[1,1,0,0]]<br>输出：1</p>
-<p>提示：</p>
-<p>1 &lt;= grid.length &lt;= 100<br>1 &lt;= grid[0].length &lt;= 100<br>grid[i][j] 为 0 或 1</p>
-<p><strong>思路：</strong></p>
-<p>这题跟221.最大正方形不一样，因为这里面的正方形是边都为1就行，所以不能按照最大的全为1的正方形的思路。正确思路应该是先求出以i,j为右下角的顶点的正方形，以i，j结束的该列的最长连续的1串之和与以i，j结束的该行的最长连续的1串之和，然后再根据求得的可能的正方形的边长，再去检验左下角和右上角的最长连续1串是否符合要求。说起来有点晦涩，但是根据代码就好懂了。</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> x[<span class="number">105</span>][<span class="number">105</span>];  <span class="comment">//以i，j结束的该列的最长连续的1串之和,i从1开始</span></span><br><span class="line">    <span class="keyword">int</span> y[<span class="number">105</span>][<span class="number">105</span>];  <span class="comment">//以i，j结束的该行的最长连续的1串之和,j从1开始</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largest1BorderedSquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> row=grid.size();</span><br><span class="line">        <span class="keyword">int</span> col=grid[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;row;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;col;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(grid[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">                    x[i+<span class="number">1</span>][j+<span class="number">1</span>]=x[i][j+<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">                    y[i+<span class="number">1</span>][j+<span class="number">1</span>]=y[i+<span class="number">1</span>][j]+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> len=min(x[i+<span class="number">1</span>][j+<span class="number">1</span>],y[i+<span class="number">1</span>][j+<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=len;k&gt;=<span class="number">1</span>;k--)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(x[i+<span class="number">1</span>][j+<span class="number">1</span>-k+<span class="number">1</span>]&gt;=k&amp;&amp;y[i+<span class="number">1</span>-k+<span class="number">1</span>][j+<span class="number">1</span>]&gt;=k)&#123;  <span class="comment">//注意这里是k，不要写成len了，还有是要大于等于k，而不是==k</span></span><br><span class="line">                        ans=max(ans,k);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans*ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<p>num1 和num2 的长度都小于 5100<br>num1 和num2 都只包含数字 0-9<br>num1 和num2 都不包含任何前导零<br>你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式</p>
+<p>模拟整数的加法就行了，我写的时候在长度短的字符串添加了前置0。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addStrings</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1=num1.size();</span><br><span class="line">        <span class="keyword">int</span> len2=num2.size();</span><br><span class="line">        <span class="keyword">int</span> len=max(len1,len2);</span><br><span class="line">        <span class="built_in">string</span> leadingz=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span>(len1&gt;len2)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len1-len2;i++)&#123;</span><br><span class="line">                leadingz+=<span class="string">&quot;0&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num2=leadingz+num2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(len1&lt;len2)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len2-len1;i++)&#123;</span><br><span class="line">                leadingz+=<span class="string">&quot;0&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num1=leadingz+num1;            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> jw=<span class="number">0</span>;  <span class="comment">//表示进位</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum=num1[i]-<span class="string">&#x27;0&#x27;</span>+num2[i]-<span class="string">&#x27;0&#x27;</span>+jw;</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">                jw=<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                jw=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            sum=sum%<span class="number">10</span>;</span><br><span class="line">            num1[i]=sum+<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(jw)&#123;</span><br><span class="line">            num1=<span class="string">&quot;1&quot;</span>+num1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>221.最大正方形：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximal-square/">https://leetcode-cn.com/problems/maximal-square/</a> </p>
+<p>看了评论后有更简洁的写法，代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addStrings</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> str;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>, i = num1.size()<span class="number">-1</span>, j = num2.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span> || cur != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= <span class="number">0</span>) cur += num1[i--] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (j &gt;= <span class="number">0</span>) cur += num2[j--] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            str = to_string (cur % <span class="number">10</span>)+str;</span><br><span class="line">            cur /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -214,11 +211,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
@@ -274,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/19/LeetCode-1139-%E6%9C%80%E5%A4%A7%E7%9A%84%E4%BB%A5-1-%E4%B8%BA%E8%BE%B9%E7%95%8C%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/21/LeetCode415-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/20/557-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D-III/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          557. 反转字符串中的单词 III
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/19/LeetCode1025-%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode1025. 除数博弈</div>
+    <a href="/2020/08/20/89-K%E6%95%B0%E4%B9%8B%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">89. K数之和</div>
       <i class="icon-circle-right"></i>
     </a>
   
