@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode522. 最长特殊序列 II | ALANG</title>
+  <title>LeetCode553. 最优除法 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定字符串列表，你需要从它们中找出最长的特殊序列。最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。">
+  <meta name="description" content="给定一组正整数，相邻的整数之间将会进行浮点除法操作。例如， [2,3,4] -&gt; 2 &#x2F; 3 &#x2F; 4 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode522. 最长特殊序列 II">
-<meta property="og:url" content="http://yoursite.com/2020/08/28/LeetCode522-%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97-II/index.html">
+<meta property="og:title" content="LeetCode553. 最优除法">
+<meta property="og:url" content="http://yoursite.com/2020/08/29/LeetCode553-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="给定字符串列表，你需要从它们中找出最长的特殊序列。最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。">
+<meta property="og:description" content="给定一组正整数，相邻的整数之间将会进行浮点除法操作。例如， [2,3,4] -&gt; 2 &#x2F; 3 &#x2F; 4 。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-28T03:47:34.000Z">
-<meta property="article:modified_time" content="2020-08-28T03:57:58.842Z">
+<meta property="article:published_time" content="2020-08-29T09:19:12.000Z">
+<meta property="article:modified_time" content="2020-08-29T09:27:07.906Z">
 <meta property="article:author" content="ALANG">
 <meta property="article:tag" content="字符串">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="回溯">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
@@ -144,44 +145,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode522-最长特殊序列-II" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode553-最优除法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode522. 最长特殊序列 II
+      LeetCode553. 最优除法
     </h1>
   
 
         
-        <a href="/2020/08/28/LeetCode522-%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97-II/" class="archive-article-date">
-  	<time datetime="2020-08-28T03:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+        <a href="/2020/08/29/LeetCode553-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-29T09:19:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>给定字符串列表，你需要从它们中找出最长的特殊序列。最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。 </p>
+        <p>给定一组<strong>正整数，</strong>相邻的整数之间将会进行浮点除法操作。例如， [2,3,4] -&gt; 2 / 3 / 4 。 </p>
 <a id="more"></a>
 
-<p>子序列可以通过删去字符串中的某些字符实现，但不能改变剩余字符的相对顺序。空序列为所有字符串的子序列，任何字符串为其自身的子序列。</p>
-<p>输入将是一个字符串列表，输出是最长特殊序列的长度。如果最长特殊序列不存在，返回 -1 。</p>
+<p>但是，你可以在任意位置添加任意数目的括号，来改变算数的优先级。你需要找出怎么添加括号，才能得到最大的结果，并且返回相应的字符串格式的表达式。你的表达式不应该含有冗余的括号。</p>
 <p><strong>示例：</strong></p>
-<p>输入: “aba”, “cdc”, “eae”<br>输出: 3</p>
-<p>输入: “aaa”, “aaa”, “aa”<br>输出: -1</p>
-<p><strong>提示：</strong></p>
-<p>所有给定的字符串长度不会超过 10 。<br>给定字符串列表的长度将在 [2, 50 ] 之间。</p>
-<p><strong>思路：</strong></p>
-<p>可以先对字符串数组按长度从大到小进行排序，然后遍历每个字符串，判断该字符串是否为其他字符串的子序列，如果都不是，则返回该字符串的长度，如果不存在这样的字符串，则返回-1。这里在判断该字符串是否为其他字符串的子序列时可以进行剪枝，具体见代码。</p>
+<p>输入: [1000,100,10,2]<br>输出: “1000/(100/10/2)”</p>
+<p><strong>解释:</strong><br>1000/(100/10/2) = 1000/((100/10)/2) = 200<br>但是，以下加粗的括号 “1000/((100/10)/2)” 是冗余的，<br>因为他们并不影响操作的优先级，所以你需要返回 “1000/(100/10/2)”。</p>
+<p><strong>其他用例:</strong><br>1000/(100/10)/2 = 50<br>1000/(100/(10/2)) = 50<br>1000/100/10/2 = 0.5<br>1000/100/(10/2) = 2</p>
+<p><strong>说明:</strong></p>
+<p>输入数组的长度在 [1, 10] 之间。<br>数组中每个元素的大小都在 [2, 1000] 之间。<br>每个测试用例只有一个最优除法解。</p>
+<p><strong>解法一：</strong></p>
+<p>因为a，b，c，d都为正整数（即大于等于1）简单推导可知max(a/b/c/d/e)=a/(b/c/d/e)=a/b*c*d*e。所以即第一个数后面的所有数加上括号即可，注意数组长度为1和2时无需加括号。</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp_func</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span>  <span class="comment">//注意加上static</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.size() &gt; b.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span></span>&#123; <span class="comment">//判断a是否为b的子序列</span></span><br><span class="line">        <span class="keyword">int</span> lena=a.size();</span><br><span class="line">        <span class="keyword">int</span> lenb=b.size();</span><br><span class="line">        <span class="keyword">int</span> straIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> strbIndex=<span class="number">0</span>;straIndex&lt;lena&amp;&amp;strbIndex&lt;lenb;strbIndex++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[straIndex]==b[strbIndex])&#123;</span><br><span class="line">                straIndex++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> straIndex==lena;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findLUSlength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">        sort(strs.begin(),strs.end(),cmp_func);</span><br><span class="line">        <span class="keyword">int</span> size=strs.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">            <span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;size;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(strs[j].size()&lt;strs[i].size())&#123;  <span class="comment">//剪枝，如果strs[j]的长度小于strs[i]，那么strs[i]肯定不会是strs[j]的子序列</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(i==j)&#123;   <span class="comment">//跳过自身</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(judge(strs[i],strs[j]))&#123;</span><br><span class="line">                    flag=<span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                <span class="keyword">return</span> strs[i].size();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">optimalDivision</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size=nums.size();</span><br><span class="line">        <span class="keyword">if</span>(size==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> to_string(nums[<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(size==<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> to_string(nums[<span class="number">0</span>])+<span class="string">&quot;/&quot;</span>+to_string(nums[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> ans=to_string(nums[<span class="number">0</span>])+<span class="string">&quot;/(&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;size<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            ans=ans+to_string(nums[i])+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans+to_string(nums[size<span class="number">-1</span>])+<span class="string">&quot;)&quot;</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-uncommon-subsequence-ii/">https://leetcode-cn.com/problems/longest-uncommon-subsequence-ii/</a> </p>
+<p><strong>解法二：回溯</strong></p>
+<p>这题的暴力方法是将列表分成 left和 right 两部分并分别对它们调用函数。我们从 start 到 end 遍历 i并得到 left=(start,i)和 right=(i+1,end)。</p>
+<p>left 和 right 分别返回它们对应部分的最大和最小值和它们对应的字符串。</p>
+<p>最小值可以通过左边部分的最小值除以右边部分的最大值得到，也就是 minVal=left.min/right.maxminVal=left.min/right.max。</p>
+<p>类似的，最大值可以通过左边部分的最大值除以右边部分的最小值得到，也就是 maxVal=left.max/right.minmaxVal=left.max/right.min。</p>
+<p>现在，怎么添加括号呢？由于出发运算是从左到右的，也就是最左边的除法默认先执行，所以我们不需要给左边部分添加括号，但我们需要给右边部分添加括号。</p>
+<p>比方假设左边部分是 “2” ，右边部分是 “3/4”，那么结果字符串 “2/(3/4)” 对应的是 左边部分+”/“+”(“+右边部分+”)”。</p>
+<p>还有一点，如果右边部分只有一个数字，我们也不需要添加括号。</p>
+<p>也就是说，如果左边部分是 “2” 且右边部分是 “3” （只包含单个数字），那么答案应该是 “2/3” 而不是 “2/(3)”。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">optimalDivision</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        T t = optimal(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> t.max_str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line">        <span class="keyword">float</span> max_val, min_val;</span><br><span class="line">        String min_str, max_str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">optimal</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, String res)</span> </span>&#123;</span><br><span class="line">        T t = <span class="keyword">new</span> T();</span><br><span class="line">        <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">            t.max_val = nums[start];</span><br><span class="line">            t.min_val = nums[start];</span><br><span class="line">            t.min_str = <span class="string">&quot;&quot;</span> + nums[start];</span><br><span class="line">            t.max_str = <span class="string">&quot;&quot;</span> + nums[start];</span><br><span class="line">            <span class="keyword">return</span> t;</span><br><span class="line">        &#125;</span><br><span class="line">        t.min_val = Float.MAX_VALUE;</span><br><span class="line">        t.max_val = Float.MIN_VALUE;</span><br><span class="line">        t.min_str = t.max_str = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">            T left = optimal(nums, start, i, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            T right = optimal(nums, i + <span class="number">1</span>, end, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (t.min_val &gt; left.min_val / right.max_val) &#123;</span><br><span class="line">                t.min_val = left.min_val / right.max_val;</span><br><span class="line">                t.min_str = left.min_str + <span class="string">&quot;/&quot;</span> + (i + <span class="number">1</span> != end ? <span class="string">&quot;(&quot;</span> : <span class="string">&quot;&quot;</span>) + right.max_str + (i + <span class="number">1</span> != end ? <span class="string">&quot;)&quot;</span> : <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (t.max_val &lt; left.max_val / right.min_val) &#123;</span><br><span class="line">                t.max_val = left.max_val / right.min_val;</span><br><span class="line">                t.max_str = left.max_str + <span class="string">&quot;/&quot;</span> + (i + <span class="number">1</span> != end ? <span class="string">&quot;(&quot;</span> : <span class="string">&quot;&quot;</span>) + right.min_str + (i + <span class="number">1</span> != end ? <span class="string">&quot;)&quot;</span> : <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/optimal-division/solution/zui-you-chu-fa-by-leetcode/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+
+<p>复杂度分析</p>
+<p>时间复杂度： O(n!)。添加了括号以后所有表达式的数目为 O(n!)，其中 nn 是列表中元素的数目。</p>
+<p>空间复杂度： O(n^2)。递归树的深度为 O(n) 且每一个节点都最多包含 O(n) 长度的字符串。</p>
+<p>作者：LeetCode<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/optimal-division/solution/zui-you-chu-fa-by-leetcode/">https://leetcode-cn.com/problems/optimal-division/solution/zui-you-chu-fa-by-leetcode/</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
       
 
@@ -221,6 +236,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">回溯</a>
         		</li>
       		
 		</ul>
@@ -276,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/28/LeetCode522-%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97-II/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/29/LeetCode553-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/29/LeetCode553-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode553. 最优除法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/24/LeetCode227-%E5%9F%BA%E6%9C%AC%E8%AE%A1%E7%AE%97%E5%99%A8-II/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode227. 基本计算器 II</div>
+    <a href="/2020/08/28/LeetCode522-%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode522. 最长特殊序列 II</div>
       <i class="icon-circle-right"></i>
     </a>
   
