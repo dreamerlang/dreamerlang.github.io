@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode443. 压缩字符串 | ALANG</title>
+  <title>Tag: 教程 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一组字符，使用原地算法将其压缩。压缩后的长度必须始终小于或等于原数组长度。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode443. 压缩字符串">
-<meta property="og:url" content="http://yoursite.com/2020/08/31/LeetCode%20443-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ALANG">
+<meta property="og:url" content="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="给定一组字符，使用原地算法将其压缩。压缩后的长度必须始终小于或等于原数组长度。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-31T13:37:24.000Z">
-<meta property="article:modified_time" content="2020-09-13T11:16:22.866Z">
 <meta property="article:author" content="ALANG">
-<meta property="article:tag" content="LeetCode题解">
-<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
@@ -144,218 +138,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode 443-压缩字符串" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      LeetCode443. 压缩字符串
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/" class="archive-article-date">
+  	<time datetime="2020-09-13T12:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/">迁移博客到新设备上同时实现能在多台设备上对博客进行更新</a>
     </h1>
   
 
-        
-        <a href="/2020/08/31/LeetCode%20443-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-08-31T13:37:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> 给定一组字符，使用原地算法将其压缩。压缩后的长度必须始终小于或等于原数组长度。</p>
-<a id="more"></a>
-
-<p>数组的每个元素应该是长度为1 的字符（不是 int 整数类型）。在完成原地修改输入数组后，返回数组的新长度。</p>
-<p><strong>进阶：</strong> 你能否仅使用O(1) 空间解决问题？ </p>
-<p><strong>示例 1：</strong></p>
-<p>输入：<br>[“a”,”a”,”b”,”b”,”c”,”c”,”c”]</p>
-<p>输出：<br>返回 6 ，输入数组的前 6 个字符应该是：[“a”,”2”,”b”,”2”,”c”,”3”]</p>
-<p>说明：<br>“aa” 被 “a2” 替代。”bb” 被 “b2” 替代。”ccc” 被 “c3” 替代。<br><strong>示例 2：</strong></p>
-<p>输入：<br>[“a”]</p>
-<p>输出：<br>返回 1 ，输入数组的前 1 个字符应该是：[“a”]</p>
-<p>解释：<br>没有任何字符串被替代。<br><strong>示例 3：</strong></p>
-<p>输入：<br>[“a”,”b”,”b”,”b”,”b”,”b”,”b”,”b”,”b”,”b”,”b”,”b”,”b”]</p>
-<p>输出：<br>返回 4 ，输入数组的前4个字符应该是：[“a”,”b”,”1”,”2”]。</p>
-<p>解释：<br>由于字符 “a” 不重复，所以不会被压缩。”bbbbbbbbbbbb” 被 “b12” 替代。<br>注意每个数字在数组中都有它自己的位置。</p>
-<p><strong>提示：</strong></p>
-<p>所有字符都有一个ASCII值在[35, 126]区间内。<br>1 &lt;= len(chars) &lt;= 1000。</p>
-<p><strong>思路：</strong></p>
-<p>参考的题解，利用cnt变量记录当前连续的字母个数，len记录当前压缩后的数组长度，遍历原数组，如果当前字母不等于下一个字母，则在len对应位置上设置为当前字母，并且如果当前字母的连续个数大于1，则在后面继续添加数字。</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compress</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&amp; chars)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=<span class="number">0</span>;  <span class="comment">//压缩后的数组长度</span></span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">0</span>; <span class="comment">//记录当前连续的字母个数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;chars.size();i++)&#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            <span class="keyword">if</span>(i==chars.size()<span class="number">-1</span>||chars[i] != chars[i + <span class="number">1</span>])&#123;</span><br><span class="line">                chars[len++] = chars[i];</span><br><span class="line">                <span class="keyword">if</span>(cnt&gt;<span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">char</span> c:to_string(cnt))&#123;</span><br><span class="line">                        chars[len++] = c;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                cnt=<span class="number">0</span>;  <span class="comment">//注意将计数归零</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/31/LeetCode%20443-%E5%8E%8B%E7%BC%A9%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/09/02/LeetCode455-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode455. 分发饼干
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/08/29/LeetCode553-%E6%9C%80%E4%BC%98%E9%99%A4%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode553. 最优除法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -388,9 +224,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
