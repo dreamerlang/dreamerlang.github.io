@@ -69,7 +69,7 @@ google_analytics: ''
 favicon: /img/Pooka.ico
 
 #你的头像url
-avatar: /assets/avatar.png
+avatar: /img/avatar.png
 
 #是否开启分享
 share_jia: true
