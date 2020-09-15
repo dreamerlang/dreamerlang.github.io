@@ -6,27 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>迁移博客到新设备上同时实现能在多台设备上对博客进行更新 | ALANG</title>
+  <title>LeetCode1005. K 次取反后最大化的数组和 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近实验室给配了一台mbp，所以这台机器就成为了我常用的机子。而博客的更新环境是基于原来旧电脑上的，想着能不能快速地对博客进行迁移。">
+  <meta name="description" content="给定一个整数数组 A，我们只能用以下方法修改该数组：我们选择某个索引 i 并将 A[i] 替换为 -A[i]，然后总共重复这个过程 K 次。（我们可以多次选择同一个索引 i。）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迁移博客到新设备上同时实现能在多台设备上对博客进行更新">
-<meta property="og:url" content="http://yoursite.com/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/index.html">
+<meta property="og:title" content="LeetCode1005. K 次取反后最大化的数组和">
+<meta property="og:url" content="http://yoursite.com/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="最近实验室给配了一台mbp，所以这台机器就成为了我常用的机子。而博客的更新环境是基于原来旧电脑上的，想着能不能快速地对博客进行迁移。">
+<meta property="og:description" content="给定一个整数数组 A，我们只能用以下方法修改该数组：我们选择某个索引 i 并将 A[i] 替换为 -A[i]，然后总共重复这个过程 K 次。（我们可以多次选择同一个索引 i。）">
 <meta property="og:locale">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202237.png">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202412.png">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202631.png">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203029.png">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203438.png">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203639.png">
-<meta property="article:published_time" content="2020-09-13T12:03:27.000Z">
-<meta property="article:modified_time" content="2020-09-13T12:53:40.149Z">
+<meta property="article:published_time" content="2020-09-15T01:34:11.000Z">
+<meta property="article:modified_time" content="2020-09-15T01:52:12.686Z">
 <meta property="article:author" content="ALANG">
-<meta property="article:tag" content="教程">
+<meta property="article:tag" content="LeetCode题解">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="难度简单">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202237.png">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
   
@@ -150,98 +145,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-迁移博客到新设备上同时实现能在多台设备上对博客进行更新" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode1005-K-次取反后最大化的数组和" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      迁移博客到新设备上同时实现能在多台设备上对博客进行更新
+      LeetCode1005. K 次取反后最大化的数组和
     </h1>
   
 
         
-        <a href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/" class="archive-article-date">
-  	<time datetime="2020-09-13T12:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+        <a href="/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" class="archive-article-date">
+  	<time datetime="2020-09-15T01:34:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近实验室给配了一台mbp，所以这台机器就成为了我常用的机子。而博客的更新环境是基于原来旧电脑上的，想着能不能快速地对博客进行迁移。</p>
+        <p>给定一个整数数组 A，我们只能用以下方法修改该数组：我们选择某个索引 <code>i</code> 并将 A[i] 替换为 -A[i]，然后总共重复这个过程 <code>K</code> 次。（我们可以多次选择同一个索引 <code>i</code>。）</p>
 <a id="more"></a>
 
-<p>在网上找到了一些方法，找到了一个可行且简单的方法，参考链接放在最后。</p>
-<p>主要的思路是 <strong>利用git分支实现</strong></p>
-<p>hexo生成的静态博客文件默认放在master分支上。（即hexo d命令更新的分支）<br> hexo的源文件（部署环境文件）可以都放在hexo分支上（可以新创建一个hexo分支），换新电脑时，直接<code>git clone hexo分支</code>即可。</p>
-<p>下面列出详细步骤：</p>
-<h2 id="步骤一：创建hexo分支并设置为主分支"><a href="#步骤一：创建hexo分支并设置为主分支" class="headerlink" title="步骤一：创建hexo分支并设置为主分支"></a>步骤一：创建hexo分支并设置为主分支</h2><p>原来的git上的项目只有一个master分支，这一步是为了创建一个新的分支来保存hexo的源文件（如部署环境文件和.md文件）。</p>
-<h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h3><p>首先确保自己已经使用hexo在github搭建好了自己的个人博客，github仓库中如下图显示：</p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202237.png"></p>
-<h3 id="2-对username-github-io仓库新建xxx分支，并克隆"><a href="#2-对username-github-io仓库新建xxx分支，并克隆" class="headerlink" title="2.对username.github.io仓库新建xxx分支，并克隆"></a>2.对username.github.io仓库新建xxx分支，并克隆</h3><p>在Github的username.github.io仓库上新建一个xxx（如hexo）分支，在输入框里输入分支名称，如hexo，然后回车，即创建成功，新创建的hexo分支内容与mater相同。</p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202412.png"></p>
-<p>并在该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为hexo，save保存；然后将该仓库克隆到本地，进入该username.github.io文件目录。</p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913202631.png"></p>
-<p>输入命令:git clone 博客的仓库地址</p>
-<p>然后查看当前分支，现在应该为hexo分支（主分支）</p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203029.png"></p>
-<h2 id="步骤二：将本地博客的部署文件拷贝username-github-io文件目录"><a href="#步骤二：将本地博客的部署文件拷贝username-github-io文件目录" class="headerlink" title="步骤二：将本地博客的部署文件拷贝username.github.io文件目录"></a>步骤二：将本地博客的部署文件拷贝username.github.io文件目录</h2><p>如题，先将本地博客的部署文件（<strong>Hexo目录下的全部文件</strong>）<strong>全部拷贝</strong>进username.github.io文件目录中去。</p>
-<p>接下来，进入username.github.io文件目录下，将该目录下的全部文件提交到hexo分支，提交之前需注意：</p>
-<blockquote>
-<ul>
-<li>将themes目录以内中的主题的.git目录删除（如果有的话，我的是在/theme/hexo-theme-yilia下），因为一个git仓库中不能包含另一个git仓库，提交主题文件夹会失败。</li>
-<li>可能有人会问，删除了themes目录中的.git不就不能<code>git pull</code>更新主题了吗，很简单，需要更新主题时在另一个地方<code>git clone</code>下来该主题的最新版本，然后将内容拷到当前主题目录即可</li>
-</ul>
-</blockquote>
-<h2 id="步骤三：提交hexo分支"><a href="#步骤三：提交hexo分支" class="headerlink" title="步骤三：提交hexo分支"></a>步骤三：提交hexo分支</h2><p>执行<code>git add .</code>、<code>git commit -m &#39;back up hexo files&#39;</code>（引号内容可改）、<code>git push</code>即可将博客的hexo部署环境提交到GitHub个人仓库的xxx分支。</p>
-<p>现在可以在GitHub上的username.github.io仓库看到两个分支的差异了。</p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203438.png"></p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200913203639.png"></p>
-<p>master分支和hexo分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；hexo分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库。</p>
-<h2 id="步骤四：新设备搭建hexo环境"><a href="#步骤四：新设备搭建hexo环境" class="headerlink" title="步骤四：新设备搭建hexo环境"></a>步骤四：新设备搭建hexo环境</h2><p>参考的是b站上程序羊的视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100">https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100</a></p>
-<p>步骤在评论区里已经总结了，先放在这里：</p>
-<h3 id="1-安装Nodejs"><a href="#1-安装Nodejs" class="headerlink" title="1.安装Nodejs"></a>1.安装Nodejs</h3><p>访问<a target="_blank" rel="noopener" href="https://nodejs.org/en/%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9LTS%E7%89%88%E6%9C%AC%E7%9A%84%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%EF%BC%8C%E4%B8%80%E7%9B%B4%E7%82%B9%E4%B8%8B%E4%B8%80%E6%AD%A5%E5%88%B0%E5%AE%8C%E6%88%90%E5%8D%B3%E5%8F%AF%E3%80%82">https://nodejs.org/en/，然后选择LTS版本的进行下载，一直点下一步到完成即可。</a></p>
-<p>sudo su #切换到root用户</p>
-<p>node -v #查看node版本</p>
-<p>npm -v #查看npm版本</p>
-<h3 id="2-安装cnpm"><a href="#2-安装cnpm" class="headerlink" title="2.安装cnpm"></a>2.安装cnpm</h3><p>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> #安装淘宝的cnpm 管理器</p>
-<p>cnpm -v #查看cnpm版本</p>
-<h3 id="3-安装hexo框架"><a href="#3-安装hexo框架" class="headerlink" title="3.安装hexo框架"></a>3.安装hexo框架</h3><p>cnpm install -g hexo-cli #安装hexo框架</p>
-<p>hexo -v #查看hexo版本</p>
-<h2 id="步骤五：新设备clone仓库"><a href="#步骤五：新设备clone仓库" class="headerlink" title="步骤五：新设备clone仓库"></a>步骤五：新设备clone仓库</h2><p>具体步骤：</p>
-<blockquote>
-<ul>
-<li>将新电脑的生成的ssh key添加到GitHub账户上</li>
-<li>在新电脑上克隆username.github.io仓库的xxx分支到本地，此时本地git仓库处于xxx分支</li>
-<li>切换到username.github.io目录，执行<code>npm install</code>(由于仓库有一个.gitignore文件，里面默认是忽略掉  node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录[也不需要]，所以需要install下)</li>
-<li>执行一个下载上传图片插件的命令npm install hexo-asset-image –save</li>
-</ul>
-</blockquote>
-<p>博客在新设备上的部署到这里就完成了。</p>
-<hr>
-<p>然后可以开始在新设备上写博客了。</p>
-<p>1.编辑、撰写文章或其他博客更新改动</p>
-<p>2.依次执行<code>git add .</code>、<code>git commit -m &#39;back up hexo files&#39;</code>（引号内容可改）、<code>git push</code>指令，保证hexo分支版本最新</p>
-<p>3.执行<code>hexo d -g</code>指令（在此之前，有时可能需要执行<code>hexo clean</code>），完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！</p>
-<h2 id="更新博客操作"><a href="#更新博客操作" class="headerlink" title="更新博客操作"></a>更新博客操作</h2><p>以后无论在哪台电脑上，更新以及提交博客，依次执行：</p>
-<p>git pull</p>
-<p>git add .</p>
-<p>git commit -m “–”</p>
-<p>git push origin hexo</p>
-<p>hexo clean</p>
-<p>hexo d -g</p>
-<h2 id="迁移过程中遇到的问题"><a href="#迁移过程中遇到的问题" class="headerlink" title="迁移过程中遇到的问题"></a>迁移过程中遇到的问题</h2><p>更新github后发现博客的头像图片无法正常加载，查了一些资料后解决方法：</p>
-<p>1.在本地仓库目录下执行：</p>
-<p>npm install hexo-asset-image –save</p>
-<p>2.在dreamerlang.github.io/themes/hexo-theme-yilia/source/img目录下添加图片avatar.png。</p>
-<p>3.修改dreamerlang.github.io/themes/hexo-theme-yilia/_config.yml文件对应的位置</p>
-<p>#你的头像url<br>avatar: /img/avatar.png</p>
-<p>参考链接：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b1fccce74e0">https://www.jianshu.com/p/0b1fccce74e0</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100">https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21193762">https://www.zhihu.com/question/21193762</a></p>
+<p><strong>思路：</strong></p>
+<p>先对数组进行一次快排，然后从左到右在小于等于k的情况下，对所有负数进行翻转并求和，如果负数的个数小于k，那么对（k-负数个数）的值进行判断，如果（k-负数个数）%2==0，则可以随便对一个非负数进行翻转，效果不变；而如果（k-负数个数）%2==1，需要对绝对值最小的那个数进行翻转，使其成为负数并求和。而数组是排好序的，所以只需要比较A[idx-1]（负数）与A[idx]（此时为非负数）的绝对值大小。注意如果数组里的数全部&gt;=0的时候，idx为0，所以此时尽需将A[idx]翻转求和即可。时间复杂度为O(nlogn)。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largestSumAfterKNegations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        sort(A.begin(),A.end());</span><br><span class="line">        <span class="keyword">int</span> idx=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(;idx&lt;A.size()&amp;&amp;K&gt;<span class="number">0</span>;idx++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[idx]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                K--;</span><br><span class="line">                ans-=A[idx];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(idx==A.size())&#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(K%<span class="number">2</span>==<span class="number">0</span>)&#123;  <span class="comment">//剩下需要翻转的数为偶数</span></span><br><span class="line">            ans+=A[idx];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(idx==<span class="number">0</span>)&#123;  <span class="comment">//当排序后的第一个数就为非负数</span></span><br><span class="line">                ans-=A[idx];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(-A[idx<span class="number">-1</span>]&lt;=A[idx])&#123; <span class="comment">//因为之前已经减A[idx-1]一次，现在需要将之前那次减法撤销，并翻转一次，所以是加2*A[idx-1]，注意还要再加A[idx]，因为后面的for循环是从idx+1开始的</span></span><br><span class="line">                    ans=ans+<span class="number">2</span>*A[idx<span class="number">-1</span>]+A[idx];</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    ans=ans-A[idx];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=idx+<span class="number">1</span>;i&lt;A.size();i++)&#123;</span><br><span class="line">            ans+=A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>评论区里还有利用小顶堆来做的，不过没有我这个解法快，因为建立堆的过程的时间就是O(nlogn)了，后面要对小顶堆进行k次取出重建并插入的过程。不过代码比较简洁，也贴在下面</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largestSumAfterKNegations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;mypq;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp;a:A)mypq.push(a);</span><br><span class="line">        <span class="keyword">while</span>(K--)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = -mypq.top();mypq.pop();</span><br><span class="line">            mypq.push(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!mypq.empty())&#123;</span><br><span class="line">            ans+= mypq.top();mypq.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -276,7 +212,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度简单</a>
         		</li>
       		
 		</ul>
@@ -332,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode1005. K 次取反后最大化的数组和
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/13/LeetCode55-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode55.跳跃游戏</div>
+    <a href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迁移博客到新设备上同时实现能在多台设备上对博客进行更新</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,7 +319,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%88%9B%E5%BB%BAhexo%E5%88%86%E6%94%AF%E5%B9%B6%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-number">1.</span> <span class="toc-text">步骤一：创建hexo分支并设置为主分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">1.准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AF%B9username-github-io%E4%BB%93%E5%BA%93%E6%96%B0%E5%BB%BAxxx%E5%88%86%E6%94%AF%EF%BC%8C%E5%B9%B6%E5%85%8B%E9%9A%86"><span class="toc-number">1.2.</span> <span class="toc-text">2.对username.github.io仓库新建xxx分支，并克隆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E5%B0%86%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9Dusername-github-io%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">步骤二：将本地博客的部署文件拷贝username.github.io文件目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%8F%90%E4%BA%A4hexo%E5%88%86%E6%94%AF"><span class="toc-number">3.</span> <span class="toc-text">步骤三：提交hexo分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E6%96%B0%E8%AE%BE%E5%A4%87%E6%90%AD%E5%BB%BAhexo%E7%8E%AF%E5%A2%83"><span class="toc-number">4.</span> <span class="toc-text">步骤四：新设备搭建hexo环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Nodejs"><span class="toc-number">4.1.</span> <span class="toc-text">1.安装Nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85cnpm"><span class="toc-number">4.2.</span> <span class="toc-text">2.安装cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hexo%E6%A1%86%E6%9E%B6"><span class="toc-number">4.3.</span> <span class="toc-text">3.安装hexo框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%94%EF%BC%9A%E6%96%B0%E8%AE%BE%E5%A4%87clone%E4%BB%93%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text">步骤五：新设备clone仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">更新博客操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">迁移过程中遇到的问题</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
