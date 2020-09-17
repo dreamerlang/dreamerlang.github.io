@@ -124,7 +124,7 @@ public:
 
 **结果：**
 
-![](../img/leetcode874.png)
+![](/img/leetcode874.png)
 
 
 

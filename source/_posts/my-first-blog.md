@@ -40,6 +40,6 @@ tags:
 
 **图片测试：**
 
-![头像](../img/avatar.png)
+![头像](/img/avatar.png)
 
 

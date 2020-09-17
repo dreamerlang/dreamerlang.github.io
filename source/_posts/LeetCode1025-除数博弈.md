@@ -85,7 +85,7 @@ public:
 **解法二：**
 看的题解，直接上图
 
-![](http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819171237.png)
+![](/img/leetcode1025.png)
 
 ```cpp
 class Solution {
