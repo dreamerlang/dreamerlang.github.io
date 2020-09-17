@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | ALANG</title>
+  <title>LeetCode1046. 最后一块石头的重量(大顶堆的简单使用例子) | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ALANG">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="有一堆石头，每块石头的重量都是正整数。每一回合，从中选出两块 最重的 石头，然后将它们一起粉碎。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode1046. 最后一块石头的重量(大顶堆的简单使用例子)">
+<meta property="og:url" content="http://yoursite.com/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/index.html">
 <meta property="og:site_name" content="ALANG">
+<meta property="og:description" content="有一堆石头，每块石头的重量都是正整数。每一回合，从中选出两块 最重的 石头，然后将它们一起粉碎。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-09-15T05:04:17.000Z">
+<meta property="article:modified_time" content="2020-09-15T06:36:46.878Z">
 <meta property="article:author" content="ALANG">
+<meta property="article:tag" content="简单模拟">
+<meta property="article:tag" content="简单难度">
+<meta property="article:tag" content="堆">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
@@ -138,63 +145,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LeetCode1046-最后一块石头的重量-大顶堆的简单使用例子" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/17/test-img/" class="archive-article-date">
-  	<time datetime="2020-09-17T07:34:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/17/test-img/">test img</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode1046. 最后一块石头的重量(大顶堆的简单使用例子)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/" class="archive-article-date">
+        
+        <a href="/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/" class="archive-article-date">
   	<time datetime="2020-09-15T05:04:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/">LeetCode1046. 最后一块石头的重量(大顶堆的简单使用例子)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 有一堆石头，每块石头的重量都是正整数。每一回合，从中选出两块 <strong>最重的</strong> 石头，然后将它们一起粉碎。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<p>假设石头的重量分别为 x 和 y，且 x &lt;= y。那么粉碎的可能结果如下：</p>
+<pre><code>如果 x == y，那么两块石头都会被完全粉碎；
+如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。</code></pre>
+<p>最后，最多只会剩下一块石头。返回此石头的重量。如果没有石头剩下，就返回 0。</p>
+<p><strong>示例：</strong></p>
+<p>输入：[2,7,4,1,8,1]<br>输出：1</p>
+<p><strong>解释：</strong><br>先选出 7 和 8，得到 1，所以数组转换为 [2,4,1,1,1]，<br>再选出 2 和 4，得到 2，所以数组转换为 [2,1,1,1]，<br>接着是 2 和 1，得到 1，所以数组转换为 [1,1,1]，<br>最后选出 1 和 1，得到 0，最终数组转换为 [1]，这就是最后剩下那块石头的重量。</p>
+<p><strong>提示：</strong></p>
+<pre><code>1 &lt;= stones.length &lt;= 30
+1 &lt;= stones[i] &lt;= 1000</code></pre>
+<p><strong>思路：</strong></p>
+<p>这道题可以作为堆的使用的简单例子，维护一个大顶堆，每次从堆里取两个数出来判断，然后再判断即可。</p>
+<p>这里插入c++中STL中堆的使用：</p>
+<p>STL中堆是利用 <strong>priority_queue</strong>实现的。</p>
+<p>优先队列是容器适配器的一种类型，特别设计为它的第一个元素总是它包含的元素中最大的元素，根据一些严格的弱顺序标准。</p>
+<p>这个上下文类似于堆，在堆中可以随时插入元素，并且只能检索最大堆元素(优先级队列顶部的元素)。</p>
+<p>优先级队列被实现为容器适配器，这些适配器类使用特定容器类的封装对象作为其底层容器，提供一组特定的成员函数来访问其元素。元素从特定容器的“后面”弹出，该容器称为优先级队列的顶部。</p>
+<p>底层容器可以是任何标准容器类模板，也可以是其他特定设计的容器类。容器应通过随机访问迭代器访问，并支持以下操作:</p>
+<ol>
+<li><strong>empty()</strong> 如果优先队列为空，则返回真</li>
+<li><strong>pop()</strong> 删除第一个元素</li>
+<li><strong>push()</strong> 加入一个元素</li>
+<li><strong>size()</strong> 返回优先队列中拥有的元素的个数</li>
+<li><strong>top()</strong> 返回优先队列中有最高优先级的元素</li>
+</ol>
+<p>标准容器类vector和deque满足这些需求。默认情况下，如果没有为特定的priority_queue类实例化指定容器类，则使用标准容器向量。</p>
+<p>任何时候都需要支持随机访问迭代器，以便在内部保持堆结构。这是由容器适配器通过在需要时自动调用算法函数make_heap、push_heap和pop_heap来自动完成的。</p>
+<p><strong>大顶堆：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">   <span class="keyword">for</span>( <span class="keyword">int</span> i= <span class="number">0</span>; i&lt; <span class="number">10</span>; ++i ) q.push(i);</span><br><span class="line">   <span class="keyword">while</span>( !q.empty() )&#123;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;q.top()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">       q.pop();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>小顶堆:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i= <span class="number">0</span>; i&lt; <span class="number">10</span>; ++i ) q.push(<span class="number">10</span>-i);</span><br><span class="line"><span class="keyword">while</span>( !q.empty() )&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q.top() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    q.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>本题代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lastStoneWeight</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num:stones)&#123;</span><br><span class="line">            q.push(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">-1</span>,y=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(q.size()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            y=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            x=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            <span class="keyword">if</span>(x!=y)&#123;</span><br><span class="line">                q.push(y-x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(q.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> q.top();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,347 +262,127 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" class="archive-article-date">
-  	<time datetime="2020-09-15T01:34:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/09/17/test-img/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          test img
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode1005. K 次取反后最大化的数组和</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/LeetCode1005-K-%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/">LeetCode1005. K 次取反后最大化的数组和</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度简单</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/" class="archive-article-date">
-  	<time datetime="2020-09-13T12:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/13/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%90%8C%E6%97%B6%E5%AE%9E%E7%8E%B0%E8%83%BD%E5%9C%A8%E5%A4%9A%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%AF%B9%E5%8D%9A%E5%AE%A2%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0/">迁移博客到新设备上同时实现能在多台设备上对博客进行更新</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/13/LeetCode55-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/" class="archive-article-date">
-  	<time datetime="2020-09-13T11:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/13/LeetCode55-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/">LeetCode55.跳跃游戏</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/13/LeetCode402-%E7%A7%BB%E6%8E%89K%E4%BD%8D%E6%95%B0%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2020-09-13T11:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/13/LeetCode402-%E7%A7%BB%E6%8E%89K%E4%BD%8D%E6%95%B0%E5%AD%97/">LeetCode402. 移掉K位数字</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/13/hello-world/" class="archive-article-date">
-  	<time datetime="2020-09-13T11:16:22.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/10/LeetCode119-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92-II/" class="archive-article-date">
-  	<time datetime="2020-09-09T16:13:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/10/LeetCode119-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92-II/">LeetCode119. 杨辉三角 II</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度简单</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/09/LeetCode874-%E6%A8%A1%E6%8B%9F%E8%A1%8C%E8%B5%B0%E6%9C%BA%E5%99%A8%E4%BA%BA/" class="archive-article-date">
-  	<time datetime="2020-09-08T16:22:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/09/LeetCode874-%E6%A8%A1%E6%8B%9F%E8%A1%8C%E8%B5%B0%E6%9C%BA%E5%99%A8%E4%BA%BA/">LeetCode874. 模拟行走机器人</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度简单</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/06/LeetCode860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/" class="archive-article-date">
-  	<time datetime="2020-09-06T02:57:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/06/LeetCode860-%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6/">LeetCode860. 柠檬水找零</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -588,8 +416,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
