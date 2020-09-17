@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="ALANG">
 <meta property="og:description" content="请你来实现一个 atoi 函数，使其能将字符串转换成整数。">
 <meta property="og:locale">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200822170315.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/22/img/leetcode8.png">
 <meta property="article:published_time" content="2020-08-22T08:41:26.000Z">
-<meta property="article:modified_time" content="2020-09-13T11:16:22.867Z">
+<meta property="article:modified_time" content="2020-09-17T08:27:30.826Z">
 <meta property="article:author" content="ALANG">
 <meta property="article:tag" content="LeetCode题解">
 <meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200822170315.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/22/img/leetcode8.png">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
   
@@ -205,7 +205,7 @@
 <p>因此，为了有条理地分析每个输入字符的处理方法，我们可以使用自动机这个概念：</p>
 <p>我们的程序在每个时刻有一个状态 s，每次从序列中输入一个字符 c，并根据字符 c 转移到下一个状态 s’。这样，我们只需要建立一个覆盖所有情况的从 s 与 c 映射到 s’ 的表格即可解决题目中的问题。</p>
 <p>本题可以建立如下图所示的自动机： </p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200822170315.png"></p>
+<p><img src="../img/leetcode8.png"></p>
 <p>个人觉得状态机的思想就是对各种情况的转移进行分类总结，跟解法一的本质是一样的。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Automaton</span> &#123;</span></span><br><span class="line">    <span class="built_in">string</span> state = <span class="string">&quot;start&quot;</span>;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; table = &#123;</span><br><span class="line">        &#123;<span class="string">&quot;start&quot;</span>, &#123;<span class="string">&quot;start&quot;</span>, <span class="string">&quot;signed&quot;</span>, <span class="string">&quot;in_number&quot;</span>, <span class="string">&quot;end&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;signed&quot;</span>, &#123;<span class="string">&quot;end&quot;</span>, <span class="string">&quot;end&quot;</span>, <span class="string">&quot;in_number&quot;</span>, <span class="string">&quot;end&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;in_number&quot;</span>, &#123;<span class="string">&quot;end&quot;</span>, <span class="string">&quot;end&quot;</span>, <span class="string">&quot;in_number&quot;</span>, <span class="string">&quot;end&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;end&quot;</span>, &#123;<span class="string">&quot;end&quot;</span>, <span class="string">&quot;end&quot;</span>, <span class="string">&quot;end&quot;</span>, <span class="string">&quot;end&quot;</span>&#125;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get_col</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isspace</span>(c)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">&#x27;+&#x27;</span> <span class="keyword">or</span> c == <span class="string">&#x27;-&#x27;</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isdigit</span>(c)) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> sign = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">get</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        state = table[state][get_col(c)];</span><br><span class="line">        <span class="keyword">if</span> (state == <span class="string">&quot;in_number&quot;</span>) &#123;</span><br><span class="line">            ans = ans * <span class="number">10</span> + c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            ans = sign == <span class="number">1</span> ? min(ans, (<span class="keyword">long</span> <span class="keyword">long</span>)INT_MAX) : min(ans, -(<span class="keyword">long</span> <span class="keyword">long</span>)INT_MIN);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="string">&quot;signed&quot;</span>)</span><br><span class="line">            sign = c == <span class="string">&#x27;+&#x27;</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        Automaton automaton;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : str)</span><br><span class="line">            automaton.get(c);</span><br><span class="line">        <span class="keyword">return</span> automaton.sign * automaton.ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhuan-huan-zheng-shu-atoi-by-leetcode-/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
@@ -489,15 +489,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LeetCode题解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">

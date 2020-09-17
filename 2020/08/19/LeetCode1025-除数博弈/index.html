@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeetCode1025. 除数博弈 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="该题有两种解法。">
+  <meta name="description" content="爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode1025. 除数博弈">
 <meta property="og:url" content="http://yoursite.com/2020/08/19/LeetCode1025-%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="该题有两种解法。">
+<meta property="og:description" content="爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。">
 <meta property="og:locale">
-<meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819170951.png">
 <meta property="og:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819171237.png">
 <meta property="article:published_time" content="2020-08-19T09:06:46.000Z">
-<meta property="article:modified_time" content="2020-09-13T11:16:22.867Z">
+<meta property="article:modified_time" content="2020-09-17T08:29:34.050Z">
 <meta property="article:author" content="ALANG">
-<meta property="article:tag" content="LeetCode题解">
 <meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="LeetCode题解">
+<meta property="article:tag" content="难度简单">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819170951.png">
+<meta name="twitter:image" content="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819171237.png">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
   
@@ -167,11 +167,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>该题有两种解法。</p>
+        <p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。</p>
 <a id="more"></a>
 
-<p><strong>题目：</strong></p>
-<p><img src="http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819170951.png"></p>
+<p>最初，黑板上有一个数字 N 。在每个玩家的回合，玩家需要执行以下操作：</p>
+<p>选出任一 x，满足 0 &lt; x &lt; N 且 N % x == 0 。<br>用 N - x 替换黑板上的数字 N 。<br>如果玩家无法执行这些操作，就会输掉游戏。</p>
+<p>只有在爱丽丝在游戏中取得胜利时才返回 True，否则返回 False。假设两个玩家都以最佳状态参与游戏。</p>
+<p><strong>示例 1：</strong></p>
+<p>输入：2<br>输出：true<br>解释：爱丽丝选择 1，鲍勃无法进行操作。</p>
+<p><strong>示例 2：</strong></p>
+<p>输入：3<br>输出：false<br>解释：爱丽丝选择 1，鲍勃也选择 1，然后爱丽丝无法进行操作。</p>
+<p><strong>提示：</strong></p>
+<p>1 &lt;= N &lt;= 1000</p>
+<p>该题有两种解法。</p>
 <p><strong>解法一：</strong><br>dp，仔细想易知dp[i]的结果是由dp[1]到dp[i-1]的结果来决定的，即如果dp[i]为true，那么dp[j]（0&lt;j&lt;i）必然为false，并且i和j满足i%(i-j)==0。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> dp[<span class="number">1005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">divisorGame</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=N;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i<span class="number">-1</span>;j&gt;<span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">int</span> tmp=i-j;</span><br><span class="line">                <span class="keyword">if</span>(i%tmp==<span class="number">0</span>&amp;&amp;dp[j]==<span class="literal">false</span>)&#123;</span><br><span class="line">                    dp[i]=<span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[N];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -214,11 +222,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LeetCode题解</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度简单</a>
         		</li>
       		
 		</ul>
@@ -451,15 +463,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LeetCode题解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
