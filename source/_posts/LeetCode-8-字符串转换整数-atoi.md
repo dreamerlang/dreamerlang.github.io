@@ -129,7 +129,7 @@ public:
 
 本题可以建立如下图所示的自动机： 
 
-![](http://qfax2tvfl.hn-bkt.clouddn.com/img/20200822170315.png)
+![](../img/leetcode8.png)
 
 个人觉得状态机的思想就是对各种情况的转移进行分类总结，跟解法一的本质是一样的。
 

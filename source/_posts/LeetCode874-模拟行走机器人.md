@@ -124,7 +124,7 @@ public:
 
 **结果：**
 
-![](http://qfax2tvfl.hn-bkt.clouddn.com/img/20200909005647.png)
+![](../img/leetcode874.png)
 
 
 

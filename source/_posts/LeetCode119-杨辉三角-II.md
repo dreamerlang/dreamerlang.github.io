@@ -57,7 +57,7 @@ public:
 
 见评论区，利用数学关系。
 
-![](http://qfax2tvfl.hn-bkt.clouddn.com/img/20200910001923.png)
+![](../img/leetcode119.png)
 
 **代码:**
 

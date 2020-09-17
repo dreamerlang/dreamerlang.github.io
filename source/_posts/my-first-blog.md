@@ -40,8 +40,6 @@ tags:
 
 **图片测试：**
 
-![头像](http://qfax2tvfl.hn-bkt.clouddn.com/avatar.png?e=1597828570&token=VcCa-yTO3h2CKeAZ49utM4K313owQLd9d_TTX1kf:ueVpjTGnIHIBzx7UfLLdUVOc0Iw= )
+![头像](../img/avatar.png)
 
 
-
-![](http://qfax2tvfl.hn-bkt.clouddn.com/img/20200819165550.png)
