@@ -15,18 +15,18 @@
 <meta property="og:site_name" content="ALANG">
 <meta property="og:description" content="最近实验室给配了一台mbp，所以这台机器就成为了我常用的机子。而博客的更新环境是基于原来旧电脑上的，想着能不能快速地对博客进行迁移。">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB2.png">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB3.png">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB4.png">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB5.png">
-<meta property="og:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB6.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB2.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB3.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB4.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB5.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB6.png">
 <meta property="article:published_time" content="2020-09-13T12:03:27.000Z">
-<meta property="article:modified_time" content="2020-09-17T08:39:11.848Z">
+<meta property="article:modified_time" content="2020-09-17T08:58:46.942Z">
 <meta property="article:author" content="ALANG">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/09/13/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png">
+<meta name="twitter:image" content="http://yoursite.com/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
   
@@ -179,14 +179,14 @@
 <p>下面列出详细步骤：</p>
 <h2 id="步骤一：创建hexo分支并设置为主分支"><a href="#步骤一：创建hexo分支并设置为主分支" class="headerlink" title="步骤一：创建hexo分支并设置为主分支"></a>步骤一：创建hexo分支并设置为主分支</h2><p>原来的git上的项目只有一个master分支，这一步是为了创建一个新的分支来保存hexo的源文件（如部署环境文件和.md文件）。</p>
 <h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h3><p>首先确保自己已经使用hexo在github搭建好了自己的个人博客，github仓库中如下图显示：</p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB1.png"></p>
 <h3 id="2-对username-github-io仓库新建xxx分支，并克隆"><a href="#2-对username-github-io仓库新建xxx分支，并克隆" class="headerlink" title="2.对username.github.io仓库新建xxx分支，并克隆"></a>2.对username.github.io仓库新建xxx分支，并克隆</h3><p>在Github的username.github.io仓库上新建一个xxx（如hexo）分支，在输入框里输入分支名称，如hexo，然后回车，即创建成功，新创建的hexo分支内容与mater相同。</p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB2.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB2.png"></p>
 <p>并在该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为hexo，save保存；然后将该仓库克隆到本地，进入该username.github.io文件目录。</p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB3.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB3.png"></p>
 <p>输入命令:git clone 博客的仓库地址</p>
 <p>然后查看当前分支，现在应该为hexo分支（主分支）</p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB4.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB4.png"></p>
 <h2 id="步骤二：将本地博客的部署文件拷贝username-github-io文件目录"><a href="#步骤二：将本地博客的部署文件拷贝username-github-io文件目录" class="headerlink" title="步骤二：将本地博客的部署文件拷贝username.github.io文件目录"></a>步骤二：将本地博客的部署文件拷贝username.github.io文件目录</h2><p>如题，先将本地博客的部署文件（<strong>Hexo目录下的全部文件</strong>）<strong>全部拷贝</strong>进username.github.io文件目录中去。</p>
 <p>接下来，进入username.github.io文件目录下，将该目录下的全部文件提交到hexo分支，提交之前需注意：</p>
 <blockquote>
@@ -197,8 +197,8 @@
 </blockquote>
 <h2 id="步骤三：提交hexo分支"><a href="#步骤三：提交hexo分支" class="headerlink" title="步骤三：提交hexo分支"></a>步骤三：提交hexo分支</h2><p>执行<code>git add .</code>、<code>git commit -m &#39;back up hexo files&#39;</code>（引号内容可改）、<code>git push</code>即可将博客的hexo部署环境提交到GitHub个人仓库的xxx分支。</p>
 <p>现在可以在GitHub上的username.github.io仓库看到两个分支的差异了。</p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB5.png"></p>
-<p><img src="../img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB6.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB5.png"></p>
+<p><img src="/img/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB6.png"></p>
 <p>master分支和hexo分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；hexo分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库。</p>
 <h2 id="步骤四：新设备搭建hexo环境"><a href="#步骤四：新设备搭建hexo环境" class="headerlink" title="步骤四：新设备搭建hexo环境"></a>步骤四：新设备搭建hexo环境</h2><p>参考的是b站上程序羊的视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100">https://www.bilibili.com/video/BV1Yb411a7ty?from=search&amp;seid=4606822225566331100</a></p>
 <p>步骤在评论区里已经总结了，先放在这里：</p>
@@ -509,15 +509,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LeetCode题解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
