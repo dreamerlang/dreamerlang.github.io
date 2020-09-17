@@ -57,7 +57,7 @@ public:
 
 见评论区，利用数学关系。
 
-![](../img/leetcode119.png)
+![](/img/leetcode119.png)
 
 **代码:**
 
