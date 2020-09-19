@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 栈 | ALANG</title>
+  <title>LeetCode134. 加油站 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ALANG">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%A0%88/index.html">
+  <meta name="description" content="在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode134. 加油站">
+<meta property="og:url" content="http://yoursite.com/2020/09/18/LeetCode134-%E5%8A%A0%E6%B2%B9%E7%AB%99/index.html">
 <meta property="og:site_name" content="ALANG">
+<meta property="og:description" content="在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。">
 <meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/img/134.%E5%8A%A0%E6%B2%B9%E7%AB%99_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.jpeg">
+<meta property="article:published_time" content="2020-09-18T15:56:11.000Z">
+<meta property="article:modified_time" content="2020-09-19T03:10:19.835Z">
 <meta property="article:author" content="ALANG">
+<meta property="article:tag" content="LeetCode题解">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="难度中等">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/img/134.%E5%8A%A0%E6%B2%B9%E7%AB%99_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
   
@@ -138,36 +147,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LeetCode134-加油站" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/24/LeetCode227-%E5%9F%BA%E6%9C%AC%E8%AE%A1%E7%AE%97%E5%99%A8-II/" class="archive-article-date">
-  	<time datetime="2020-08-24T06:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/24/LeetCode227-%E5%9F%BA%E6%9C%AC%E8%AE%A1%E7%AE%97%E5%99%A8-II/">LeetCode227. 基本计算器 II</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode134. 加油站
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/09/18/LeetCode134-%E5%8A%A0%E6%B2%B9%E7%AB%99/" class="archive-article-date">
+  	<time datetime="2020-09-18T15:56:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。</p>
+<a id="more"></a>
+
+<p><strong>说明:</strong> </p>
+<p>如果题目有解，该答案即为唯一答案。<br>输入数组均为非空数组，且长度相同。<br>输入数组中的元素均为非负数。</p>
+<p><strong>示例 1:</strong></p>
+<p><strong>输入:</strong><br>gas  = [1,2,3,4,5]<br>cost = [3,4,5,1,2]</p>
+<p><strong>输出:</strong> 3</p>
+<p><strong>解释:</strong><br>从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油<br>开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油<br>开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油<br>开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油<br>开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油<br>开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。<br>因此，3 可为起始索引。</p>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入:</strong><br>gas  = [2,3,4]<br>cost = [3,4,3]</p>
+<p><strong>输出:</strong> -1</p>
+<p><strong>解释:</strong><br>你不能从 0 号或 1 号加油站出发，因为没有足够的汽油可以让你行驶到下一个加油站。<br>我们从 2 号加油站出发，可以获得 4 升汽油。 此时油箱有 = 0 + 4 = 4 升汽油<br>开往 0 号加油站，此时油箱有 4 - 3 + 2 = 3 升汽油<br>开往 1 号加油站，此时油箱有 3 - 3 + 3 = 3 升汽油<br>你无法返回 2 号加油站，因为返程需要消耗 4 升汽油，但是你的油箱只有 3 升汽油。<br>因此，无论怎样，你都不可能绕环路行驶一周。</p>
+<p><strong>方法一：</strong></p>
+<p>首先车能够循环开一圈的充分条件是总的油量需要大于等于总的cost，所以关键的问题是怎么定位起点的问题，题目里说了答案是唯一解。所以肯定存在一个起点将左右两段路分割开来当然左边或者右边都有可能为空。</p>
+<p>注：一个站的收益如果小于0，肯定不能作为起点；而连续的多个站也可以等效地看做一个站，如果其累积收益小于0，就跳过，寻找下一个。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; gas, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;  <span class="comment">//记录总的油量-总的cost</span></span><br><span class="line">        <span class="keyword">int</span> cur_sun=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();i++)&#123;</span><br><span class="line">            sum+=gas[i]-cost[i];</span><br><span class="line">            cur_sun+=gas[i]-cost[i];</span><br><span class="line">            <span class="keyword">if</span>(cur_sun&lt;<span class="number">0</span>)&#123; <span class="comment">//若cur_sun&lt;0，表示从0到i无法达到，于是从i+1开始</span></span><br><span class="line">                start=i+<span class="number">1</span>;</span><br><span class="line">                cur_sun=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum&gt;=<span class="number">0</span>?start:<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>方法二：</strong></p>
+<p>参考<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/gas-station/solution/shi-yong-tu-de-si-xiang-fen-xi-gai-wen-ti-by-cyayc/">采用画图的思想分析</a>，采用数形结合的方式。具体如下图所示。依旧记录从索引idx开始的gas[i]-cost[i]的前缀和，然后从图可以看出，起点都在前缀和最小的那个位置的下一个位置。</p>
+<p><img src="/img/134.%E5%8A%A0%E6%B2%B9%E7%AB%99_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.jpeg"></p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; gas, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> min_remain=INT_MAX;</span><br><span class="line">        <span class="keyword">int</span> min_idx=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();i++)&#123;</span><br><span class="line">            sum+=gas[i]-cost[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;min_remain)&#123;</span><br><span class="line">                min_idx=i;</span><br><span class="line">                min_remain=sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum&gt;=<span class="number">0</span>?((min_idx+<span class="number">1</span>)%gas.size()):<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -177,29 +232,129 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">难度中等</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/18/LeetCode134-%E5%8A%A0%E6%B2%B9%E7%AB%99/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/09/15/LeetCode1046-%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8F-%E5%A4%A7%E9%A1%B6%E5%A0%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode1046. 最后一块石头的重量(大顶堆的简单使用例子)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -232,9 +387,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
