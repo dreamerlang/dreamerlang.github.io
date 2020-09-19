@@ -31,16 +31,16 @@ Python 3.7 （venv环境）
 
 若没有wheel需要安装：
 
-**sudo pip install wheel**
+sudo pip install wheel
 
 安装完成后在pycharm里cd到对应的whl文件目录下。
 
 如在我的电脑上是：
 
-**cd ~/Downloads**
+cd ~/Downloads
 
 然后执行：
 
-**sudo wheel install JPype1-1.0.2-cp37-cp37m-macosx_10_9_x86_64.whl ** 
+sudo wheel install JPype1-1.0.2-cp37-cp37m-macosx_10_9_x86_64.whl 
 
 Jpype的安装就到此完成。
