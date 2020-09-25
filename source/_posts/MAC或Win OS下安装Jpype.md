@@ -1,12 +1,12 @@
 ---
-title: MAC OS下安装Jpype
+title: MAC或Win OS下安装Jpype
 date: 2020-09-19 15:25:48
 tags:
 - 教程
 - Jpype
 ---
 
- macOs下安装Jpype。
+ macOs或者win下安装Jpype。以macOs为例子。
 
 Jpype可以实现Python 代码调用 Java 代码。
 
