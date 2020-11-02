@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeetCode72. 阶乘后的零 | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一个整数 n，返回 n! 结果尾数中零的数量。 示例 1: 输入: 3输出: 0解释: 3! &#x3D; 6, 尾数中没有零。 示例 2: 输入: 5输出: 1解释: 5! &#x3D; 120, 尾数中有 1 个零.说明: 你算法的时间复杂度应为 O(log n) 。">
+  <meta name="description" content="给定一个整数 n，返回 n! 结果尾数中零的数量。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode72. 阶乘后的零">
 <meta property="og:url" content="http://yoursite.com/2020/11/02/LeetCode72-%E9%98%B6%E4%B9%98%E5%90%8E%E7%9A%84%E9%9B%B6/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="给定一个整数 n，返回 n! 结果尾数中零的数量。 示例 1: 输入: 3输出: 0解释: 3! &#x3D; 6, 尾数中没有零。 示例 2: 输入: 5输出: 1解释: 5! &#x3D; 120, 尾数中有 1 个零.说明: 你算法的时间复杂度应为 O(log n) 。">
+<meta property="og:description" content="给定一个整数 n，返回 n! 结果尾数中零的数量。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-11-02T13:31:46.000Z">
-<meta property="article:modified_time" content="2020-11-02T13:41:10.301Z">
+<meta property="article:modified_time" content="2020-11-02T13:48:14.045Z">
 <meta property="article:author" content="ALANG">
 <meta property="article:tag" content="LeetCode题解">
 <meta property="article:tag" content="难度简单">
@@ -166,12 +166,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>给定一个整数 n，返回 n! 结果尾数中零的数量。</p>
+<a id="more"></a>
+
 <p><strong>示例 1:</strong></p>
 <p>输入: 3<br>输出: 0<br>解释: 3! = 6, 尾数中没有零。</p>
 <p><strong>示例 2:</strong></p>
 <p>输入: 5<br>输出: 1<br>解释: 5! = 120, 尾数中有 1 个零.<br>说明: 你算法的时间复杂度应为 O(log n) 。</p>
-<a id="more"></a>
-
 <p><strong>错误解法：</strong></p>
 <p>拍脑袋的做法，先累乘求出阶乘，然后再判断末尾0的数量，但是n大点就会溢出，而且不符合题目里的要求logn的做法。</p>
 <p><strong>解法一：</strong></p>
@@ -187,7 +187,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">5</span>;i&lt;=n;i+=<span class="number">5</span>)&#123;  <span class="comment">//只用check5的倍数的数字含有多少个5的因子</span></span><br><span class="line">            <span class="keyword">int</span> num=i;</span><br><span class="line">            <span class="keyword">while</span>(num%<span class="number">5</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                num/=<span class="number">5</span>;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>解法二：</strong></p>
-<p>对于一个数的阶乘，就如之前分析的，5 的因子一定是每隔 5 个数出现一次，也就是下边的样子。</p>
+<p>但是解法一的时间复杂度为O(n)，而题目的要求是O(logn)，然后对于一个数的阶乘，就如之前分析的，5 的因子一定是每隔 5 个数出现一次，也就是下边的样子。</p>
 <p>n! = 1 * 2 * 3 * 4 * (1 * 5) * … * (2 * 5) * … * (3 * 5) *… * n</p>
 <p>因为每隔 5 个数出现一个 5，所以计算出现了多少个 5，我们只需要用 n/5 就可以算出来。</p>
 <p>但还没有结束，继续分析。</p>
