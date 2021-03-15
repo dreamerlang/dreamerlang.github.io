@@ -97,7 +97,6 @@ public:
     int trailingZeroes(int n) {
         int ans=0;
         for(int i=5;i<=n;i=i*5){
-            int num=i;
             ans+=n/i;
         }
         return ans;
