@@ -2,8 +2,8 @@
 title: Java反射机制
 date: 2021-03-15 21:29:06
 tags:
-Java
-反射
+- Java
+- 反射
 ---
 
 `class`是由JVM在执行过程中动态加载的。JVM在第一次读取到一种`class`类型时，将其加载进内存。每加载一种`class`，JVM就为其创建一个`Class`类型的实例，并关联起来。
