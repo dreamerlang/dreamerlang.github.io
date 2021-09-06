@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ALANG</title>
+  <title>Spring_IOC | ALANG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用com.alibaba.druid连接mysql数据库时异常：com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server [duplicate] Server version: 8.0.23 解决方法： mysql驱动的版">
+  <meta name="description" content="2. Spring注解开发2.1 Spring原始注解Spring是轻代码而重配置的框架，配置比较繁重，影响开发效率，所以注解开发是一种趋势，注解代替xml配置文件可以简化配置，提高开发效率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ALANG">
-<meta property="og:url" content="http://yoursite.com/2021/03/25/Spring_IOC/index.html">
+<meta property="og:title" content="Spring_IOC">
+<meta property="og:url" content="http://yoursite.com/2021/04/11/Spring_IOC/index.html">
 <meta property="og:site_name" content="ALANG">
-<meta property="og:description" content="使用com.alibaba.druid连接mysql数据库时异常：com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server [duplicate] Server version: 8.0.23 解决方法： mysql驱动的版">
+<meta property="og:description" content="2. Spring注解开发2.1 Spring原始注解Spring是轻代码而重配置的框架，配置比较繁重，影响开发效率，所以注解开发是一种趋势，注解代替xml配置文件可以简化配置，提高开发效率。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-25T12:57:10.212Z">
-<meta property="article:modified_time" content="2021-03-26T13:11:41.357Z">
+<meta property="article:published_time" content="2021-04-11T06:48:59.000Z">
+<meta property="article:modified_time" content="2021-09-06T02:34:13.551Z">
 <meta property="article:author" content="ALANG">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALANG" type="application/atom+xml">
@@ -145,27 +146,26 @@
             <article id="post-Spring_IOC" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring_IOC
+    </h1>
+  
+
+        
+        <a href="/2021/04/11/Spring_IOC/" class="archive-article-date">
+  	<time datetime="2021-04-11T06:48:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-11</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用com-alibaba-druid连接mysql数据库时异常："><a href="#使用com-alibaba-druid连接mysql数据库时异常：" class="headerlink" title="使用com.alibaba.druid连接mysql数据库时异常："></a>使用com.alibaba.druid连接mysql数据库时异常：</h2><p>com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server [duplicate]</p>
-<p>Server version: 8.0.23</p>
-<p>解决方法：</p>
-<p>mysql驱动的版本指定为8.0.11 （报错前为5.1.39）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="2-Spring注解开发"><a href="#2-Spring注解开发" class="headerlink" title="2. Spring注解开发"></a>2. Spring注解开发</h2><h3 id="2-1-Spring原始注解"><a href="#2-1-Spring原始注解" class="headerlink" title="2.1 Spring原始注解"></a>2.1 Spring原始注解</h3><p>Spring是轻代码而重配置的框架，配置比较繁重，影响开发效率，所以注解开发是一种趋势，注解代替xml配置文件可以简化配置，提高开发效率。 </p>
+<a id="more"></a>
 
-
-
-
-
-<h2 id="使用com-zaxxer-hikari-HikariDataSource连接mysql数据库时异常："><a href="#使用com-zaxxer-hikari-HikariDataSource连接mysql数据库时异常：" class="headerlink" title="使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常："></a>使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常：</h2><p>Exception in thread “main” java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=jdbc:mysql://localhost:3306/learnjdbc?useSSL=false</p>
-<p>Caused by: java.sql.SQLException: No suitable driver</p>
-<p>原因：居然是maven依赖里没有写mysql-connector-java驱动。。。服了</p>
-<p>spring容器配置文件applicationContext.xml中加载属性配置文件jdbc.properties，需要在applicationContext.xml中的配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">        <span class="comment">&lt;!--    加载配置文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;classpath:jdbc.properties&quot;</span>/&gt;</span></span><br><span class="line">  </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-Spring注解开发"><a href="#2-Spring注解开发" class="headerlink" title="2. Spring注解开发"></a>2. Spring注解开发</h2><h3 id="2-1-Spring原始注解"><a href="#2-1-Spring原始注解" class="headerlink" title="2.1 Spring原始注解"></a>2.1 Spring原始注解</h3><p>Spring是轻代码而重配置的框架，配置比较繁重，影响开发效率，所以注解开发是一种趋势，注解代替xml配置文件可以简化配置，提高开发效率。 </p>
 <p>Spring原始注解主要是替代<Bean>的配置</p>
 <table>
 <thead>
@@ -306,7 +306,25 @@
 <p>③使用@ContextConfiguration指定配置文件或配置类</p>
 <p>④使用@Autowired注入需要测试的对象</p>
 <p>⑤创建测试方法进行测试</p>
+<h2 id="使用com-alibaba-druid连接mysql数据库时异常："><a href="#使用com-alibaba-druid连接mysql数据库时异常：" class="headerlink" title="使用com.alibaba.druid连接mysql数据库时异常："></a>使用com.alibaba.druid连接mysql数据库时异常：</h2><p>com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server [duplicate]</p>
+<p>Server version: 8.0.23</p>
+<p>解决方法：</p>
+<p>mysql驱动的版本指定为8.0.11 （报错前为5.1.39）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+
+
+
+
+<h2 id="使用com-zaxxer-hikari-HikariDataSource连接mysql数据库时异常："><a href="#使用com-zaxxer-hikari-HikariDataSource连接mysql数据库时异常：" class="headerlink" title="使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常："></a>使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常：</h2><p>Exception in thread “main” java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=jdbc:mysql://localhost:3306/learnjdbc?useSSL=false</p>
+<p>Caused by: java.sql.SQLException: No suitable driver</p>
+<p>原因：居然是maven依赖里没有写mysql-connector-java驱动。。。服了</p>
+<p>spring容器配置文件applicationContext.xml中加载属性配置文件jdbc.properties，需要在applicationContext.xml中的配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">        <span class="comment">&lt;!--    加载配置文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;classpath:jdbc.properties&quot;</span>/&gt;</span></span><br><span class="line">  </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       
 
       
@@ -335,6 +353,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -385,7 +414,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/25/Spring_IOC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/11/Spring_IOC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -399,11 +428,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/26/Spring_AOP/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/11/Spring_AOP/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          Spring_AOP
         
       </div>
     </a>
@@ -437,7 +466,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8com-alibaba-druid%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E5%BC%82%E5%B8%B8%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">使用com.alibaba.druid连接mysql数据库时异常：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8com-zaxxer-hikari-HikariDataSource%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E5%BC%82%E5%B8%B8%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-number">3.</span> <span class="toc-text">2. Spring注解开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Spring%E5%8E%9F%E5%A7%8B%E6%B3%A8%E8%A7%A3"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Spring原始注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Spring%E6%96%B0%E6%B3%A8%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Spring新注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Spring%E6%95%B4%E5%90%88Junit"><span class="toc-number">4.</span> <span class="toc-text">3. Spring整合Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%8E%9F%E5%A7%8BJunit%E6%B5%8B%E8%AF%95Spring%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 原始Junit测试Spring的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 上述问题解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Spring%E9%9B%86%E6%88%90Junit%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Spring集成Junit步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Spring%E9%9B%86%E6%88%90Junit%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 Spring集成Junit代码实现</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">2. Spring注解开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Spring%E5%8E%9F%E5%A7%8B%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 Spring原始注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Spring%E6%96%B0%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 Spring新注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Spring%E6%95%B4%E5%90%88Junit"><span class="toc-number">2.</span> <span class="toc-text">3. Spring整合Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%8E%9F%E5%A7%8BJunit%E6%B5%8B%E8%AF%95Spring%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">3.1 原始Junit测试Spring的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">3.2 上述问题解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Spring%E9%9B%86%E6%88%90Junit%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.3.</span> <span class="toc-text">3.3 Spring集成Junit步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Spring%E9%9B%86%E6%88%90Junit%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.4.</span> <span class="toc-text">3.4 Spring集成Junit代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8com-alibaba-druid%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E5%BC%82%E5%B8%B8%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">使用com.alibaba.druid连接mysql数据库时异常：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8com-zaxxer-hikari-HikariDataSource%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E5%BC%82%E5%B8%B8%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">使用com.zaxxer.hikari.HikariDataSource连接mysql数据库时异常：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text"></span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -566,6 +595,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LeetCode题解</a>
               </li>
              
@@ -622,6 +659,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
@@ -638,15 +679,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
